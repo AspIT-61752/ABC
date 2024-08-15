@@ -7,6 +7,7 @@
 ## Medium
 
 - Store data in DB as json or an array of objects
+- Settings (Language, currency, etc.)
 
 ## Hard
 
