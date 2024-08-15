@@ -46,10 +46,9 @@
 2. Backend should be developed in C# using Visual Studio 2022.
 3. Backend should be an ASP.NET Core application using .NET 8 as the runtime.
 4. Backend should be deployable in production on a Windows Server 2019 machine on a IIS with .NET 8 as the runtime.
-5. The frontend should be developed using HTML5, Tailwind and JavaScript.
-6. The frontend should be compatible with Firefox on an IOS device.
-7. The frontend should be compatible with Firefox on an Android device.
-8. The frontend should be compatible with Firefox on a Windows 10 device.
-9. Communication between the client and server should use HTTP or HTTPS as the protocol.
-10. Communication between the client and server should use JSON as the data format.
-    NOTE: Things like safety and encryption are not required, as that is out of scope.
+5. The frontend should be developed using HTML5, Bootstrap and JavaScript.
+6. The frontend should be compatible with any browser on a mobile device.
+7. The frontend should be compatible with any browser on a desktop device.
+8. Communication between the client and server should use HTTP or HTTPS as the protocol.
+9. Communication between the client and server should use JSON as the data format.
+   NOTE: Things like safety and encryption are not required, as that is out of scope.
