@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ABC.Entity
+namespace ABC.Entities
 {
     public class User
     {
@@ -12,12 +12,16 @@ namespace ABC.Entity
         [JsonConstructor]
         public User() { }
 
-        public User(int id, string username, string password, string email)
+        public User(string username, string password, string email)
         {
-            UserId = id;
             Username = username;
             Password = password;
             Email = email;
+        }
+
+        public User(int id, string username, string password, string email) : this(username, password, email)
+        {
+            UserId = id;
         }
 
         public int UserId { get => userId; set => userId = value; }

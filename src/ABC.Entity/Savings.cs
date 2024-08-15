@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ABC.Entity
+namespace ABC.Entities
 {
     public class Saving
     {
