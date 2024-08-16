@@ -26,8 +26,4 @@
     <ProjectReference Include="..\ABC.Entity\ABC.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
