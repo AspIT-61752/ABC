@@ -16,7 +16,17 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
     options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
 });
 
+// Singletons
+
+// Scoped
+
+// Register the repository as a service
 builder.Services.AddScoped<IRepository<User>, Repository<User>>();
+
+// Transient
+
+// Register the Math class as a service
+builder.Services.AddTransient<ABC.Calculator.Math>();
 
 builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
