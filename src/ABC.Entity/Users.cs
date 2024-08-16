@@ -12,11 +12,14 @@ namespace ABC.Entities
         [JsonConstructor]
         public User() { }
 
-        public User(string username, string password, string email)
+        public User(string password, string email)
         {
-            Username = username;
             Password = password;
             Email = email;
+        }
+        public User(string? username, string password, string email) : this(password, email)
+        {
+            Username = username;
         }
 
         public User(int id, string username, string password, string email) : this(username, password, email)
@@ -25,7 +28,7 @@ namespace ABC.Entities
         }
 
         public int UserId { get => userId; set => userId = value; }
-        public string Username { get => username; set => username = value; }
+        public string? Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
         public string Email { get => email; set => email = value; }
     }
