@@ -17,15 +17,19 @@ namespace ABC.API.Controllers
         public void UpdateBy([FromQuery] User user) => _repo.Update(user);
 
         [HttpDelete]
+        [Route("DeleteByUser")]
         public void DeleteBy([FromQuery] User user) => _repo.DeleteBy(user);
 
         [HttpDelete]
+        [Route("DeleteById")]
         public void DeleteBy([FromQuery] int id) => _repo.DeleteBy(id);
 
         [HttpGet]
+        [Route("GetById")]
         public User GetBy([FromQuery] int id) => _repo.GetBy(id);
 
         [HttpGet]
+        [Route("GetByUser")]
         public User GetBy([FromQuery] User user) => _repo.GetBy(user);
 
         [HttpGet]

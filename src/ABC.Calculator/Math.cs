@@ -2,9 +2,9 @@
 {
     public class Math
     {
-        public int SumOf(List<int> numbers)
+        public double SumOf(List<double> numbers)
         {
-            int sum = 0;
+            double sum = 0;
 
             foreach (var number in numbers)
             {

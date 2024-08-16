@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ABC.Calculator\ABC.Calculator.csproj" />
     <ProjectReference Include="..\ABC.DataAccess\ABC.DataAccess.csproj" />
     <ProjectReference Include="..\ABC.Entity\ABC.Entities.csproj" />
   </ItemGroup>
