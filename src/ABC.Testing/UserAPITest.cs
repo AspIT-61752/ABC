@@ -12,6 +12,7 @@ namespace ABC.Testing
     {
         private readonly HttpClient _client;
         private readonly Mock<IUserRepository> _mockRepo;
+        private readonly string portnumber = "7047";
 
         public UserAPITest(WebApplicationFactory<ABC.API.Controllers.UserController> factory)
         {
@@ -30,13 +31,14 @@ namespace ABC.Testing
             });
 
             _client = factory.CreateClient();
+            _client.BaseAddress = new Uri($"http://localhost:{portnumber}");
         }
 
         [Fact]
         public async Task IsUserValid_ReturnsTrue_WhenUserIsValid()
         {
             // Arrange
-            var user = new User { Email = "tobsi@gmail.com", Password = "123" };
+            var user = new User { Username = "n", Email = "tobsi@gmail.com", Password = "123" };
             _mockRepo.Setup(repo => repo.IsUserValid(user)).Returns(true);
 
             // Act
@@ -44,10 +46,11 @@ namespace ABC.Testing
 
             // Assert
             response.EnsureSuccessStatusCode();
-            var res = bool.Parse(await response.Content.ReadAsStringAsync()); // Why am I not getting the bool? 
+            var res = bool.Parse(await response.Content.ReadAsStringAsync()); // The content is empty. The API needs the correct ID, email, and password.
             res.Should().BeTrue();
         }
 
+        // TODO: Check if this test is correct
         [Fact]
         public async Task IsUserValid_ReturnsFalse_WhenUserIsInvalid()
         {

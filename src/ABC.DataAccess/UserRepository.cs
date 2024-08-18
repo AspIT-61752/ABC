@@ -14,7 +14,7 @@ namespace ABC.DataAccess
             User dbUser = new();
 
             // Find the user in the database
-            if (user.UserId != null) // Get by ID
+            if (user.UserId != null && user.UserId != 0) // Get by ID
             {
                 dbUser = context.Users.FirstOrDefault(u => u.UserId == user.UserId);
             }

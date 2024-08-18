@@ -31,6 +31,9 @@ namespace ABC.DataAccess
 
         public IEnumerable<T> GetAll()
         {
+            // TODO: Fix bug. 
+            // Add a check to see if the table exists in the database or make a try-catch block to handle the exception.
+            // Exception: Microsoft.Data.SqlClient.SqlException: 'Invalid object name 'Users'.'
             return context.Set<T>().ToList();
         }
 
