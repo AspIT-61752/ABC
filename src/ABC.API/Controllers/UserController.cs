@@ -35,7 +35,7 @@ namespace ABC.API.Controllers
         [HttpGet]
         public IEnumerable<User> GetAll() => _repo.GetAll();
 
-        [HttpPost]
+        [HttpGet]
         [Route("IsUserValid")]
         public bool IsUserValid([FromQuery] User user) => _repo.IsUserValid(user);
     }

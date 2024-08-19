@@ -1,6 +1,35 @@
 const address = "https://localhost:7047/";
 const userAPI = "api/User/";
 const isUserValid = "IsUserValid?";
+
+const requestGet = {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
+
+const requestPost = {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
+
+const requestPut = {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
+
+const requestDelete = {
+  method: "DELETE",
+  headers: {
+    "Content-Type": "application/json",
+  },
+};
+
 // const URL = "http://localhost:3000/api/user";
 
 let user = null;
@@ -24,10 +53,10 @@ function signIn() {
     address +
     userAPI +
     isUserValid +
-    "Password=" +
-    password.value +
-    "&Email=" +
-    email.value;
+    "Email=" +
+    email.value +
+    "&Password=" +
+    password.value;
 
   //   console.log(email.value);
   //   console.log(password.value);
@@ -35,8 +64,8 @@ function signIn() {
 
   // Call API and get the user
 
-  fetch(url)
-    .then((res) => response.json())
+  fetch(url, requestGet)
+    .then((res) => res.json())
     .then((data) => {
       console.log("Success: ", data);
     })
