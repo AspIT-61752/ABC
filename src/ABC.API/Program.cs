@@ -1,5 +1,4 @@
 using ABC.DataAccess;
-using ABC.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -21,7 +20,8 @@ builder.Services.AddControllers().AddNewtonsoftJson(options =>
 // Scoped
 
 // Register the repository as a service
-builder.Services.AddScoped<IRepository<User>, Repository<User>>();
+//builder.Services.AddScoped<IRepository<User>, Repository<User>>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 // Transient
 

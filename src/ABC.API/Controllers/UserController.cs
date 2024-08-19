@@ -6,9 +6,9 @@ namespace ABC.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController(IRepository<User> repo) : Controller
+    public class UserController(IUserRepository repo) : Controller
     {
-        private readonly IRepository<User> _repo = repo;
+        private readonly IUserRepository _repo = repo;
 
         [HttpPost]
         public void AddNew([FromQuery] User user) => _repo.Add(user);
@@ -34,5 +34,9 @@ namespace ABC.API.Controllers
 
         [HttpGet]
         public IEnumerable<User> GetAll() => _repo.GetAll();
+
+        [HttpPost]
+        [Route("IsUserValid")]
+        public bool IsUserValid([FromQuery] User user) => _repo.IsUserValid(user);
     }
 }
