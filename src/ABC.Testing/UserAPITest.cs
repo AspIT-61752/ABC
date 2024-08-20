@@ -31,7 +31,7 @@ namespace ABC.Testing
             });
 
             _client = factory.CreateClient();
-            _client.BaseAddress = new Uri($"http://localhost:{portnumber}");
+            _client.BaseAddress = new Uri($"https://localhost:{portnumber}");
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace ABC.Testing
             _mockRepo.Setup(repo => repo.IsUserValid(user)).Returns(true);
 
             // Act
-            var response = await _client.PostAsync($"/api/User/IsUserValid?Email={user.Email}&Password={user.Password}", null);
+            var response = await _client.GetAsync($"/api/User/IsUserValid?Email={user.Email}&Password={user.Password}");
 
             // Assert
             response.EnsureSuccessStatusCode();
@@ -59,7 +59,7 @@ namespace ABC.Testing
             _mockRepo.Setup(repo => repo.IsUserValid(user)).Returns(false);
 
             // Act
-            var response = await _client.PostAsync($"/api/User/IsUserValid?Email={user.Email}&Password={user.Password}", null);
+            var response = await _client.GetAsync($"/api/User/IsUserValid?Email={user.Email}&Password={user.Password}");
 
             // Assert
             response.EnsureSuccessStatusCode();
