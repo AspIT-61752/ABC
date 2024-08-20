@@ -37,6 +37,6 @@ namespace ABC.API.Controllers
 
         [HttpGet]
         [Route("IsUserValid")]
-        public bool IsUserValid([FromQuery] User user) => _repo.IsUserValid(user);
+        public (bool, string) IsUserValid([FromQuery] User user) => _repo.IsUserValid(user);
     }
 }

@@ -20,6 +20,7 @@ namespace ABC.API.Controllers
         }
 
         [HttpPost]
+        [Route("SumOf")]
         public IActionResult SumOf(List<double> list)
         {
             if (list == null || list.Count == 0)

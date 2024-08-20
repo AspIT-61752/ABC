@@ -4,6 +4,6 @@ namespace ABC.DataAccess
 {
     public interface IUserRepository : IRepository<User>
     {
-        bool IsUserValid(User user);
+        (bool, string) IsUserValid(User user);
     }
 }

@@ -9,7 +9,7 @@ namespace ABC.DataAccess
         /// </summary>
         /// <param name="user">The user</param>
         /// <returns></returns>
-        public bool IsUserValid(User user)
+        public (bool, string) IsUserValid(User user)
         {
             User dbUser = new();
 
@@ -26,16 +26,16 @@ namespace ABC.DataAccess
             // If the user is not found, return false
             if (dbUser == null)
             {
-                return false;
+                return (false, "Not found");
             }
             // If the user is found, but the password or email is incorrect, return false
             else if (dbUser.Password == user.Password && dbUser.Email == user.Email)
             {
-                return true;
+                return (true, dbUser.Username);
             }
             else
             {
-                return false;
+                return (false, "Incorrect Email or password");
             }
         }
     }
