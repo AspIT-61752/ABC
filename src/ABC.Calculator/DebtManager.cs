@@ -1,6 +1,8 @@
-﻿namespace ABC.Calculator
+﻿using ABC.Entities;
+
+namespace ABC.Calculator
 {
-    public class Debt
+    public class DebtManager
     {
         // It would be interesting to make something like: https://www.calculator.net/debt-payoff-calculator.html
         // later, but we'll need to make V0.1 first. 
@@ -69,6 +71,30 @@
             double total = debt;
 
             return 0;
+        }
+
+        // SnowballMethod. A method to pay off debts by paying the smallest debt first, then the next smallest, etc.
+        // You pay the minimum on all debts, then pay the smallest debt as much as you can.
+        // I'll need to make a few methods to make this work.
+        // Maybe I should sort the debts by amount and interest rate first. Find a way to calculate the minimum payment.
+
+        // I probably need to make a class for the debts, the payments, and the debts paid off. 3 classes:
+        // Debt (amount, interest rate, etc.)
+        // Payment (amount, date, etc.)
+        // DebtPaid (months to pay off, interest paid, etc.)
+
+        // 1. Get the smallest debt
+        // 2. Pay the smallest debt
+        // 3. Repeat until all debts are paid off
+        // 4. Return the list of debts with the amount paid and the amount left.
+
+
+        public List<Debt> SnowballMethod(List<Debt> debts)
+        {
+            // Sort the debts by amount
+            // Calculate the projected time and money to pay off all debts.
+            // Return the list of debts with the amount paid and the amount left.
+            return debts;
         }
 
     }

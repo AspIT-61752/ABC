@@ -2,7 +2,7 @@
 {
     public class MathDebtLibraryTests
     {
-        private readonly Calculator.Debt _calcD = new Calculator.Debt();
+        private readonly Calculator.DebtManager _calcD = new Calculator.DebtManager();
 
         [Fact]
         public void CalcDebtInterest_Loop()
