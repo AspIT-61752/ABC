@@ -15,13 +15,14 @@ namespace ABC.API.Controllers
             _calcM = calcM;
         }
 
+        // TODO: Do we use [FromBody] or [FromQuery]
         [HttpPost]
         [Route("PaybackDebtByMonthlyAmount")]
         public IActionResult PaybackDebtByMonthlyAmount(double debt, double interestRate, double amount)
         {
             string res = "";
 
-            int paybackIn = _calcD.PaybackDebtByMonthlyAmount(debt, interestRate, amount);
+            int paybackIn = _calcD.PaybackDebtByInstallment_formula(debt, interestRate, amount);
 
             (int, int) paybackPipe = _calcM.MonthToYear(paybackIn);
 

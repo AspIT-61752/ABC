@@ -49,8 +49,9 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 // Transient
 
-// Register the Math class as a service
+// Register the Math classes as a service
 builder.Services.AddTransient<ABC.Calculator.Math>();
+builder.Services.AddTransient<ABC.Calculator.Debt>();
 
 builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
