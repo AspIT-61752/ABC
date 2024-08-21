@@ -14,14 +14,14 @@
             return sum;
         }
 
-        // Converters
-
         public (int, int) MonthToYear(int months)
         {
-            int years = months / 12; // C# rounds down. 16 / 12 = 1
-            int remainder = months % 12;
+            int years = months / 12;
+            int remainingMonths = months % 12;
 
-            return (years, remainder);
+            return (years, remainingMonths);
         }
+
+
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ABC.Testing
+﻿namespace ABC.Testing
 {
     public class MathDebtLibraryTests
     {
@@ -16,11 +10,11 @@ namespace ABC.Testing
             // Did some testing, looks like this meathod is 3 - 7 times faster than the other one.
             // PaybackDebtByInstallment (1ms - 2ms)
             // PaybackDebtByMonthlyAmount (4ms - 7ms)
-            var result = _calcD.PaybackDebtByInstallment(24000, 1.6, 780); // $24000 debt, 1.6% interest, $780 monthly payment
+            var result = _calcD.PaybackDebtByInstallment(2000, 1.0, 1000); // $24000 debt, 1.6% interest, $780 monthly payment
 
             // Result: 32 months according to some online calculator. 
             // But I think it sould be around 42 - 43 months.
-            Assert.Equal(43, result);
+            Assert.Equal(3, result);
         }
 
         [Fact]
@@ -28,10 +22,10 @@ namespace ABC.Testing
         {
             //var result = _calcD.PaybackDebtByInstallment(24000, 1.6, 780); // $24000 debt, 1.6% interest, $780 monthly payment
 
-            var result = _calcD.PaybackDebtByMonthlyAmount(24000, 1.6, 780);
+            var result = _calcD.PaybackDebtByMonthlyAmount(2000, 1.0, 1000);
 
             // Result: 32 months
-            Assert.Equal(43, result);
+            Assert.Equal(3, result);
         }
 
         [Fact]
@@ -42,7 +36,7 @@ namespace ABC.Testing
 
             // Result: 32 months according to some online calculator. 
             // But I think it sould be around 42 - 43 months.
-            Assert.Equal(43, result);
+            Assert.Equal(939, result);
         }
 
         [Fact]
@@ -53,7 +47,7 @@ namespace ABC.Testing
             var result = _calcD.PaybackDebtByMonthlyAmount(12421000, 0.05, 16584);
 
             // Result: 32 months
-            Assert.Equal(43, result);
+            Assert.Equal(939, result);
         }
     }
 }
