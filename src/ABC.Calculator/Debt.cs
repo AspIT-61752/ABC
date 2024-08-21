@@ -31,7 +31,7 @@
         }
 
         // PaybackDebtByAmount
-        public double PaybackDebtByMonthlyAmount(double debt, double interest, double amount)
+        public int PaybackDebtByMonthlyAmount(double debt, double interest, double amount)
         {
             // I did do the math right: https://www.fm-magazine.com/news/2018/jan/excel-debt-repayment-calculations-201718014.html 
             // G = y * ( 1-(1 + r)^-n / r )
@@ -41,7 +41,7 @@
             double convertedInterest = interest / 100; // r
 
             // Math
-            double n = System.Math.Ceiling(-1 * (System.Math.Log(1 - (total * convertedInterest / monthlyPayment)) / System.Math.Log(1 + convertedInterest)));
+            int n = Convert.ToInt32(System.Math.Ceiling(-1 * (System.Math.Log(1 - (total * convertedInterest / monthlyPayment)) / System.Math.Log(1 + convertedInterest))));
 
             return n;
         }
