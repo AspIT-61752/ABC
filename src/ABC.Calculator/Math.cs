@@ -13,5 +13,15 @@
 
             return sum;
         }
+
+        public (int, int) MonthToYear(int months)
+        {
+            int years = months / 12;
+            int remainingMonths = months % 12;
+
+            return (years, remainingMonths);
+        }
+
+
     }
 }
