@@ -79,18 +79,13 @@ form.addEventListener("submit", function (e) {
             totalText.textContent = "$" + total;
             console.log("Total: $" + total);
             console.log("Income: $" + income);
-            var data = { 
-                a: total,
-                b: income 
-            };
-            
+
+
+            const url = `https://localhost:7047/api/Math/Subtract?a=${income}&b=${total}`;
+
                       // Send the values of the input fields to the server to calculate the remaining amount
-                      fetch(address + userAPI + "Subtract", {
+                      fetch(url, {
                         method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify(`a: ${income} b: ${total}`),
                     })
                         .then((response) => response.json())
                         .then((data) => {
