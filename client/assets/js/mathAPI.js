@@ -12,13 +12,22 @@ var other = 0;
 var saving = 0;
 var debtRepayment = 0;
 var expenses = [];
+var total = 0;
+var rest = 0;
 
 var form = document.querySelector("#budget-form");
+var totalText = document.querySelector("#total");
 
 // Add event listener to the form to get the values of the input fields when the form
 // is submitted and send them to the server to calculate the sum of the expenses
 form.addEventListener("submit", function (e) {
+    // Reset the total sum of the expenses
+    total = 0;
+
+    // Prevent the form from submitting and refreshing the page
     e.preventDefault();
+
+    // Get the values of the input fields and store them in the variables
     income = document.querySelector("#monthly-income").value;
 
     housing = document.querySelector("#housing").value;
@@ -33,12 +42,14 @@ form.addEventListener("submit", function (e) {
 
     expenses = [housing, food, transportation, entertainment, utilities, insurance, other, saving, debtRepayment];
 
+    // Check if the input fields are empty and set the value to 0 if they are
     for (var i = 0; i < expenses.length; i++) {
         if (expenses[i] == "") {
             expenses[i] = 0;
         }
     }
 
+    // Send the values of the input fields to the server to calculate the sum of the expenses
     fetch(address + userAPI + "SumOf", {
         method: "POST",
         headers: {
@@ -48,11 +59,19 @@ form.addEventListener("submit", function (e) {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
-            alert(data);
+            console.log("Total: $" + data);
+            total = data;
+            // Display the total sum of the expenses
+            totalText.textContent = "$" + total;
         })
         .catch((error) => {
             console.error("Error:", error);
         });
 
+
     });
+
+
+    
+
+
