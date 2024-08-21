@@ -17,6 +17,7 @@ var rest = 0;
 
 var form = document.querySelector("#budget-form");
 var totalText = document.querySelector("#total");
+var restText = document.querySelector("#remaining");
 
 // Add event listener to the form to get the values of the input fields when the form
 // is submitted and send them to the server to calculate the sum of the expenses
@@ -49,7 +50,13 @@ form.addEventListener("submit", function (e) {
         }
     }
 
-    // Send the values of the input fields to the server to calculate the sum of the expenses
+    // Calculate the total sum of the expenses
+    calculateTotal();
+    });
+
+    // Fetch the data from the server and calculate the total sum of the expenses
+     function calculateTotal() {
+     // Send the values of the input fields to the server to calculate the sum of the expenses
     fetch(address + userAPI + "SumOf", {
         method: "POST",
         headers: {
@@ -63,13 +70,39 @@ form.addEventListener("submit", function (e) {
             total = data;
             // Display the total sum of the expenses
             totalText.textContent = "$" + total;
+            // Calculate the remaining amount after the expenses have been deducted from the income
+            calculateRest();
         })
         .catch((error) => {
             console.error("Error:", error);
         });
+    }
+
+    // Call API to calculate the remaining amount after the expenses have been deducted from the income
+    function calculateRest() {
+        // Send the values of the input fields to the server to calculate the remaining amount
+        fetch(address + userAPI + "Subtract", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify([income, total]),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log("Rest: $" + data);
+                rest = data;
+                // Display the remaining amount
+                restText.textContent = "$" + rest;
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    }
+
+    
 
 
-    });
 
 
     
