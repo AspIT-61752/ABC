@@ -32,5 +32,28 @@ namespace ABC.API.Controllers
 
             return Ok(res);
         }
+
+        [HttpPost]
+        [Route("Subtract")]
+        public IActionResult Subtract(double a, double b)
+        {
+            var res = _calc.Subtract(a, b);
+
+            return Ok(res);
+        }
+
+        [HttpPost]
+        [Route("SubtractWithList")]
+        public IActionResult SubtractWithList(double input, List<double> list)
+        {
+            if (list == null || list.Count == 0)
+            {
+                return BadRequest("A list of numbers is required.");
+            }
+
+            var res = _calc.SubtractWithList(input, list);
+
+            return Ok(res);
+        }
     }
 }

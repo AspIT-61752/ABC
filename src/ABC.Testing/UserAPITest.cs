@@ -10,6 +10,7 @@ namespace ABC.Testing
 {
     public class UserAPITest : IClassFixture<WebApplicationFactory<ABC.API.Controllers.UserController>>
     {
+
         private readonly HttpClient _client;
         private readonly Mock<IUserRepository> _mockRepo;
         private readonly string portnumber = "7047";
@@ -26,7 +27,7 @@ namespace ABC.Testing
                     services.RemoveAll<IUserRepository>();
 
                     // Register the mock repository
-                    services.AddSingleton(_mockRepo.Object);
+                    services.AddSingleton<IUserRepository>(_mockRepo.Object);
                 });
             });
 
@@ -34,12 +35,14 @@ namespace ABC.Testing
             _client.BaseAddress = new Uri($"https://localhost:{portnumber}");
         }
 
+        // TODO: Setup the test server to use the mock repository instead of the real one. 
+        // Look into how to do this with the WebApplicationFactory and Mock (Moq).
         [Fact]
         public async Task IsUserValid_ReturnsTrue_WhenUserIsValid()
         {
             // Arrange
             var user = new User { Username = "n", Email = "tobsi@gmail.com", Password = "123" };
-            _mockRepo.Setup(repo => repo.IsUserValid(user)).Returns(true);
+            //_mockRepo.Setup(repo => repo.IsUserValid(user)).Returns((true, "Tobsi"));
 
             // Act
             var response = await _client.GetAsync($"/api/User/IsUserValid?Email={user.Email}&Password={user.Password}");
@@ -56,7 +59,7 @@ namespace ABC.Testing
         {
             // Arrange
             var user = new User { Email = "Tobsi@gmail.com", Password = "wrongPass" };
-            _mockRepo.Setup(repo => repo.IsUserValid(user)).Returns(false);
+            //_mockRepo.Setup(repo => repo.IsUserValid(user)).Returns((false, ""));
 
             // Act
             var response = await _client.GetAsync($"/api/User/IsUserValid?Email={user.Email}&Password={user.Password}");
