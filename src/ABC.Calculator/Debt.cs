@@ -6,6 +6,14 @@
         // later, but we'll need to make V0.1 first. 
 
         // PaybackDebtByInstallment
+        /// <summary>
+        /// Calculate how many months it will take to pay back a debt with an interest rate and a monthly installment
+        /// </summary>
+        /// <remarks>Uses a loop instead of a formula.</remarks>
+        /// <param name="debt">Debt amount</param>
+        /// <param name="interest">Interest rate in decimal form (10 = 10% interest)</param>
+        /// <param name="installment">Amount paid per month</param>
+        /// <returns>Amount of months it will take to pay back the debt with the given interest and installment</returns>
         public int PaybackDebtByInstallment(double debt, double interest, double installment)
         {
             double total = debt;
@@ -31,7 +39,15 @@
         }
 
         // PaybackDebtByAmount
-        public int PaybackDebtByMonthlyAmount(double debt, double interest, double amount)
+        /// <summary>
+        /// Calculate how many months it will take to pay back a debt with an interest rate and a monthly installment.
+        /// </summary>
+        /// <remarks>Uses a formula instead of a loop.</remarks>
+        /// <param name="debt">Debt amount</param>
+        /// <param name="interest">Interest rate in decimal form (10 = 10% interest)</param>
+        /// <param name="installment">Amount paid per month</param>
+        /// <returns>Amount of months it will take to pay back the debt with the given interest and installment</returns>
+        public int PaybackDebtByInstallment_formula(double debt, double interest, double amount)
         {
             // I did do the math right: https://www.fm-magazine.com/news/2018/jan/excel-debt-repayment-calculations-201718014.html 
             // G = y * ( 1-(1 + r)^-n / r )
