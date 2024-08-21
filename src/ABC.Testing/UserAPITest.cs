@@ -1,17 +1,10 @@
 ﻿using ABC.DataAccess;
-using ABC.DataAccess.Migrations;
 using ABC.Entities;
 using FluentAssertions;
-using FluentAssertions.Common;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Moq;
-using static Azure.Core.HttpHeader;
-using System.Net.NetworkInformation;
-using System.Reflection.Metadata;
 
 namespace ABC.Testing
 {
@@ -49,7 +42,7 @@ namespace ABC.Testing
         {
             // Arrange
             var user = new User { Username = "n", Email = "tobsi@gmail.com", Password = "123" };
-            _mockRepo.Setup(repo => repo.IsUserValid(user)).Returns((true, "Tobsi"));
+            //_mockRepo.Setup(repo => repo.IsUserValid(user)).Returns((true, "Tobsi"));
 
             // Act
             var response = await _client.GetAsync($"/api/User/IsUserValid?Email={user.Email}&Password={user.Password}");
@@ -66,7 +59,7 @@ namespace ABC.Testing
         {
             // Arrange
             var user = new User { Email = "Tobsi@gmail.com", Password = "wrongPass" };
-            _mockRepo.Setup(repo => repo.IsUserValid(user)).Returns((false, ""));
+            //_mockRepo.Setup(repo => repo.IsUserValid(user)).Returns((false, ""));
 
             // Act
             var response = await _client.GetAsync($"/api/User/IsUserValid?Email={user.Email}&Password={user.Password}");
