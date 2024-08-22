@@ -100,8 +100,52 @@ namespace ABC.Calculator
             // const debts = document.querySelectorAll('.debt-row'); 
             // If the controller only gets a list of debt, interest, and installment instead of a List<Debt>, I'll just make a foreach loop to make the List<Debt> in the controller.
 
+            // Make a method to calculate the minimum payment for each debt.
+
+            int setId = 0;
+            double monthlyDebtBudget = 0;   // The total amount they can pay per month.
+                                            // If I do this, I want to return the total amount paid per month as well.
+
+            foreach (var debt in debts)
+            {
+                debt.DebtId = setId;
+
+                // Calculate the minimum payment
+                debt.MinimumPaymentThreshold = CalculateDebtPaymentThreshold(debt.DebtAmount, debt.InterestRate);
+                debt.MonthlyPayment = debt.MinimumPaymentThreshold;
+                monthlyDebtBudget -= debt.MonthlyPayment;
+
+
+                setId++;
+            }
+
+            // I probably have to make a method that loops through the debts like bubble sort.
+            // So when the monthly payment for the smallest debt is paid, it goes to the next smallest debt and carries over the monthly payment from the previous debt. (Just remember to set the previous MonthlyPayment to 0)
+            // Timecomplexity: O(n^2) - I think it's fine, people won't have that many debts where it would be a problem. (I hope)
+            for (int i = 0; i < debts.Count(); i++)
+            {
+                debts[i].MonthsToPayback = PaybackDebtByInstallment(debts[i].DebtAmount, debts[i].InterestRate, debts[i].MonthlyPayment); // I don't have the monthly payment yet.
+                // I could probably set a parameter for the monthly debt payment (The total amount they can pay per month).
+                // Keep track of the total amount paid per month.
+                // And just set the monthly payment to the minimum payment threshold.
+            }
+
+            debts = debts.OrderBy(debt => debt.DebtAmount).ToList(); // Sort the debts by amount. 
+
             return debts;
         }
 
+        /// <summary>
+        /// Calculate the minimum payment needed to pay off a debt without it growing.
+        /// </summary>
+        /// <param name="debtAmount">The amount of the debt</param>
+        /// <param name="interestRate">The interest rate in decimal form (10 = 10% interest)</param>
+        /// <returns>The amount that should be paid so the debt doesn't grow</returns>
+        private double CalculateDebtPaymentThreshold(double debtAmount, double interestRate)
+        {
+            double interest = debtAmount * (interestRate / 100);
+            double minimumPayment = debtAmount + interest;
+            return minimumPayment;
+        }
     }
 }
