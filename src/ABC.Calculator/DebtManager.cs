@@ -94,6 +94,12 @@ namespace ABC.Calculator
             // Sort the debts by amount
             // Calculate the projected time and money to pay off all debts.
             // Return the list of debts with the amount paid and the amount left.
+
+            // I think we could make a button that makes a new row of (debt, interest, installment), with the same unique class.
+            // Then when the user clicks the calculate button, it gets all the rows with that class and sends them to the controller.
+            // const debts = document.querySelectorAll('.debt-row'); 
+            // If the controller only gets a list of debt, interest, and installment instead of a List<Debt>, I'll just make a foreach loop to make the List<Debt> in the controller.
+
             return debts;
         }
 
