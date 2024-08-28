@@ -76,7 +76,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 // Need to be able send requests to the API
 app.UseCors("AllowSpecificOrigins");
