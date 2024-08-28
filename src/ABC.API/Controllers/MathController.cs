@@ -21,7 +21,7 @@ namespace ABC.API.Controllers
 
         // TODO: Do we use [FromBody] or [FromQuery] 
 
-        [HttpPost]
+        [HttpGet]
         [Route("SumOf")]
         public IActionResult SumOf(List<double> list)
         {
@@ -35,7 +35,7 @@ namespace ABC.API.Controllers
             return Ok(res);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("Subtract")]
         public IActionResult Subtract(double a, double b)
         {
@@ -44,7 +44,7 @@ namespace ABC.API.Controllers
             return Ok(res);
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("SubtractWithList")]
         public IActionResult SubtractWithList(double input, List<double> list)
         {

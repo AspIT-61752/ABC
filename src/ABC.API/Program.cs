@@ -31,6 +31,7 @@ builder.Services.AddCors(options =>
 // Add services to the container.
 
 // Get the connection string from appsettings.json
+
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
