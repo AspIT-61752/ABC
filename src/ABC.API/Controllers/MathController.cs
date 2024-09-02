@@ -19,11 +19,11 @@ namespace ABC.API.Controllers
             //_calc = new Calculator.Math();
         }
 
-        // TODO: Do we use [FromBody] or [FromQuery] 
+        // TODO: Do we use [FromBody] or [FromBody] 
 
         [HttpGet]
         [Route("SumOf")]
-        public IActionResult SumOf(List<double> list)
+        public IActionResult SumOf([FromBody] List<double> list)
         {
             if (list == null || list.Count == 0)
             {
@@ -37,7 +37,7 @@ namespace ABC.API.Controllers
 
         [HttpGet]
         [Route("Subtract")]
-        public IActionResult Subtract(double a, double b)
+        public IActionResult Subtract([FromBody] double a, [FromBody] double b)
         {
             var res = _calc.Subtract(a, b);
 
@@ -46,7 +46,7 @@ namespace ABC.API.Controllers
 
         [HttpGet]
         [Route("SubtractWithList")]
-        public IActionResult SubtractWithList(double input, List<double> list)
+        public IActionResult SubtractWithList([FromBody] double input, List<double> list)
         {
             if (list == null || list.Count == 0)
             {
