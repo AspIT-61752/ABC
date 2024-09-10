@@ -1,5 +1,5 @@
 // Initialize the variables
-const address = "https://10.203.16.58:7777/";
+const address = "http://10.203.16.58:7777/";
 const mathAPI = "api/math/";
 var income = 0;
 var housing = 0;
