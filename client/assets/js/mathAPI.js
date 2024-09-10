@@ -1,6 +1,6 @@
 // Initialize the variables
-const address = "https://localhost:7047/";
-const userAPI = "api/math/";
+const address = "http://10.203.16.58:7777/";
+const mathAPI = "api/math/";
 var income = 0;
 var housing = 0;
 var food = 0;
@@ -64,7 +64,7 @@ form.addEventListener("submit", function (e) {
     // Fetch the data from the server and calculate the total sum of the expenses
      function calculateTotal() {
      // Send the values of the input fields to the server to calculate the sum of the expenses
-    fetch(address + userAPI + "SumOf", {
+    fetch(address + mathAPI + "SumOf", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -81,11 +81,10 @@ form.addEventListener("submit", function (e) {
             console.log("Income: $" + income);
 
 
-            const url = `https://localhost:7047/api/Math/Subtract?a=${income}&b=${total}`;
-
                       // Send the values of the input fields to the server to calculate the remaining amount
-                      fetch(url, {
+                      fetch(address + mathAPI + `Subtract?a=${income}&b=${total}`, {
                         method: "POST",
+                        body: {},
                     })
                         .then((response) => response.json())
                         .then((data) => {

@@ -31,6 +31,7 @@ builder.Services.AddCors(options =>
 // Add services to the container.
 
 // Get the connection string from appsettings.json
+
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking));
 
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
@@ -76,7 +77,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 // Need to be able send requests to the API
 app.UseCors("AllowSpecificOrigins");
