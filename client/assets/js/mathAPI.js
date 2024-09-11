@@ -9,7 +9,7 @@ var entertainment = 0;
 var utilities = 0;
 var insurance = 0;
 var other = 0;
-var saving = 0;
+var savings = 0;
 var debtRepayment = 0;
 var expenses = [];
 var total = 0;
@@ -48,7 +48,7 @@ form.addEventListener("submit", function (e) {
     savings = document.querySelector("#savings").value;
     debtRepayment = document.querySelector("#debt-repayment").value;
 
-    expenses = [housing, food, transportation, entertainment, utilities, insurance, other, saving, debtRepayment];
+    expenses = [housing, food, transportation, entertainment, utilities, insurance, other, savings, debtRepayment];
 
     // Check if the input fields are empty and set the value to 0 if they are
     for (var i = 0; i < expenses.length; i++) {
