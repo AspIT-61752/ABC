@@ -1,6 +1,12 @@
 // Initialize the variables
 const address = "http://10.203.16.58:7777/";
 const mathAPI = "api/math/";
+
+
+
+// * 
+// *  Budget Calculator 
+// * 
 var income = 0;
 var housing = 0;
 var food = 0;
@@ -103,6 +109,10 @@ form.addEventListener("submit", function (e) {
         });
     }
 
+
+// *
+// *  Debt Repayment Calculator
+// *
 
 
 

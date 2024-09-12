@@ -1,0 +1,20 @@
+"filename", "language", "HTML", "CSS", "JavaScript", "XML", "comment", "blank", "total"
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\brand\bootstrap-logo-white.svg", "XML", 0, 0, 0, 1, 0, 0, 1
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\brand\bootstrap-logo.svg", "XML", 0, 0, 0, 1, 0, 1, 2
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\css\register.css", "CSS", 0, 26, 0, 0, 0, 5, 31
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\css\sign-in.css", "CSS", 0, 21, 0, 0, 0, 5, 26
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\js\color-modes.js", "JavaScript", 0, 0, 60, 0, 5, 16, 81
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\js\mathAPI.js", "JavaScript", 0, 0, 77, 0, 19, 33, 129
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\js\userAPI.js", "JavaScript", 0, 0, 88, 0, 17, 22, 127
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\index.html", "HTML", 61, 0, 0, 0, 2, 2, 65
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\page\login.html", "HTML", 30, 0, 0, 0, 7, 12, 49
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\page\register.html", "HTML", 33, 0, 0, 0, 7, 15, 55
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\sign-in\index.html", "HTML", 235, 0, 0, 0, 1, 23, 259
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\sign-in\sign-in.css", "CSS", 0, 21, 0, 0, 0, 5, 26
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\budgetplanner.html", "HTML", 97, 0, 0, 0, 1, 0, 98
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\debtrepayment.html", "HTML", 89, 0, 0, 0, 2, 3, 94
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\guide1.html", "HTML", 59, 0, 0, 0, 0, 0, 59
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\guide2.html", "HTML", 77, 0, 0, 0, 0, 0, 77
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\guide3.html", "HTML", 76, 0, 0, 0, 0, 0, 76
+"c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\guides.html", "HTML", 65, 0, 0, 0, 4, 0, 69
+"Total", "-", 822, 68, 225, 2, 65, 142, 1324

@@ -1,0 +1,53 @@
+Date : 2024-09-12 09:57:31
+Directory : c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client
+Total : 18 files,  1117 codes, 65 comments, 142 blanks, all 1324 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| HTML       |         10 |        822 |         24 |         55 |        901 |
+| JavaScript |          3 |        225 |         41 |         71 |        337 |
+| CSS        |          3 |         68 |          0 |         15 |         83 |
+| XML        |          2 |          2 |          0 |          1 |          3 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                            | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                               |         18 |      1,117 |         65 |        142 |      1,324 |
+| . (Files)                                                                                                       |          1 |         61 |          2 |          2 |         65 |
+| assets                                                                                                          |          7 |        274 |         41 |         82 |        397 |
+| assets\brand                                                                                                    |          2 |          2 |          0 |          1 |          3 |
+| assets\css                                                                                                      |          2 |         47 |          0 |         10 |         57 |
+| assets\js                                                                                                       |          3 |        225 |         41 |         71 |        337 |
+| page                                                                                                            |          2 |         63 |         14 |         27 |        104 |
+| sign-in                                                                                                         |          2 |        256 |          1 |         28 |        285 |
+| subpages                                                                                                        |          6 |        463 |          7 |          3 |        473 |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                        | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\brand\bootstrap-logo-white.svg | XML        |          1 |          0 |          0 |          1 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\brand\bootstrap-logo.svg       | XML        |          1 |          0 |          1 |          2 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\css\register.css               | CSS        |         26 |          0 |          5 |         31 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\css\sign-in.css                | CSS        |         21 |          0 |          5 |         26 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\js\color-modes.js              | JavaScript |         60 |          5 |         16 |         81 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\js\mathAPI.js                  | JavaScript |         77 |         19 |         33 |        129 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\assets\js\userAPI.js                  | JavaScript |         88 |         17 |         22 |        127 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\index.html                            | HTML       |         61 |          2 |          2 |         65 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\page\login.html                       | HTML       |         30 |          7 |         12 |         49 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\page\register.html                    | HTML       |         33 |          7 |         15 |         55 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\sign-in\index.html                    | HTML       |        235 |          1 |         23 |        259 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\sign-in\sign-in.css                   | CSS        |         21 |          0 |          5 |         26 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\budgetplanner.html           | HTML       |         97 |          1 |          0 |         98 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\debtrepayment.html           | HTML       |         89 |          2 |          3 |         94 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\guide1.html                  | HTML       |         59 |          0 |          0 |         59 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\guide2.html                  | HTML       |         77 |          0 |          0 |         77 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\guide3.html                  | HTML       |         76 |          0 |          0 |         76 |
+| c:\users\61151\OneDrive - AspIT - Ondrive\Skrivebord\Repos\ABC\ABC\client\subpages\guides.html                  | HTML       |         65 |          4 |          0 |         69 |
+| Total                                                                                                           |            |      1,117 |         65 |        142 |      1,324 |
++-----------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
