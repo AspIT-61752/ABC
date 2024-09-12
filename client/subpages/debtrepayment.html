@@ -109,25 +109,5 @@
           </div>
         </div>
       
-        <!-- Bootstrap JS and Popper.js -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-        <!-- JavaScript to handle calculations -->
-        <script>
-          // Function to calculate payoff time with interest
-          document.getElementById('timeToPayoffForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const debtAmount = parseFloat(document.getElementById('debtAmount').value);
-            const interestRate = parseFloat(document.getElementById('interestRate').value) / 100 / 12; // Monthly interest rate
-            const monthlyPayment = parseFloat(document.getElementById('monthlyPayment').value);
-      
-            if (monthlyPayment > debtAmount * interestRate) {
-              // Iterative approach to account for interest every month
-              let balance = debtAmount;
-              let months = 0;
-      
-              while (balance > 0) {
-               
-      
 
 </body>
