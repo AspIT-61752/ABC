@@ -1,6 +1,6 @@
 // Initialize the variables
-const address = "https://localhost:7047/";
-const userAPI = "api/math/";
+const address = "http://10.203.16.58:7777/";
+const mathAPI = "api/math/";
 var income = 0;
 var housing = 0;
 var food = 0;
@@ -9,7 +9,7 @@ var entertainment = 0;
 var utilities = 0;
 var insurance = 0;
 var other = 0;
-var saving = 0;
+var savings = 0;
 var debtRepayment = 0;
 var expenses = [];
 var total = 0;
@@ -48,7 +48,7 @@ form.addEventListener("submit", function (e) {
     savings = document.querySelector("#savings").value;
     debtRepayment = document.querySelector("#debt-repayment").value;
 
-    expenses = [housing, food, transportation, entertainment, utilities, insurance, other, saving, debtRepayment];
+    expenses = [housing, food, transportation, entertainment, utilities, insurance, other, savings, debtRepayment];
 
     // Check if the input fields are empty and set the value to 0 if they are
     for (var i = 0; i < expenses.length; i++) {
@@ -64,7 +64,7 @@ form.addEventListener("submit", function (e) {
     // Fetch the data from the server and calculate the total sum of the expenses
      function calculateTotal() {
      // Send the values of the input fields to the server to calculate the sum of the expenses
-    fetch(address + userAPI + "SumOf", {
+    fetch(address + mathAPI + "SumOf", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -81,11 +81,10 @@ form.addEventListener("submit", function (e) {
             console.log("Income: $" + income);
 
 
-            const url = `https://localhost:7047/api/Math/Subtract?a=${income}&b=${total}`;
-
                       // Send the values of the input fields to the server to calculate the remaining amount
-                      fetch(url, {
+                      fetch(address + mathAPI + `Subtract?a=${income}&b=${total}`, {
                         method: "POST",
+                        body: {},
                     })
                         .then((response) => response.json())
                         .then((data) => {

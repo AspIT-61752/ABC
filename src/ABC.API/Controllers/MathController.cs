@@ -19,11 +19,11 @@ namespace ABC.API.Controllers
             //_calc = new Calculator.Math();
         }
 
-        // TODO: Do we use [FromBody] or [FromQuery] 
+        // TODO: Do we use [FromBody] or [FromBody] 
 
         [HttpPost]
         [Route("SumOf")]
-        public IActionResult SumOf(List<double> list)
+        public IActionResult SumOf([FromBody] List<double> list)
         {
             if (list == null || list.Count == 0)
             {
